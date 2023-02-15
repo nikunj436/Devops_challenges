@@ -20,9 +20,7 @@ services:
       - app-tier
 
   python_app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     depends_on:
       - redis
     networks:
