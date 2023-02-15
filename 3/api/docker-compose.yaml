@@ -1,0 +1,33 @@
+services:
+  redis_cache: #2nd container
+    image: redislabs/redismod
+    restart: always
+    hostname: redis_cache
+    command: apt install radis-server
+    expose:
+      - 6379
+    ports:
+      - 6379:6379
+    networks:
+      - api_vlan
+    
+
+  flask_api: #1st container 
+    build: .   #building like docker build .
+    image: flask_api #image_name
+    restart: always
+    ports:
+      - 5000:5000
+      #- 6379:6379
+    #environment:
+     # - REDIS_URL=redis://redis:6379
+    networks:
+      - api_vlan 
+    depends_on:
+      - redis_cache
+
+#networks services here
+networks:
+  api_vlan:
+    driver: bridge
+    

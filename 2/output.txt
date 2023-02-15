@@ -1,0 +1,4 @@
+count: [primary: 3, replica: 3]
+size: [primary: 46.6tb, replica: 46.6tb]
+disk-max-node: Jkk88h7
+watermark-breached: [abjH7KL,Jkk88h7]
