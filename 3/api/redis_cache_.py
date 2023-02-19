@@ -1,6 +1,6 @@
 import re
 import redis
-r = redis.Redis(host="localshost", port=6379,db=0)
+r = redis.Redis(host='redis_cache', port=6379,db=0)
 
 def add_to_dic(i):
     i_l = len(i)
