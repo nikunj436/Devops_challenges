@@ -5,6 +5,7 @@ requirement:
 - To run:
 - with Docker compose(use any command from  below)
         - docker compose -f docker-compose.yaml up
+        - docker compose -f docker-compose.yaml up -d
         - docker compose up 
         - docker compose up -d
 
